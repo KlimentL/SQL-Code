@@ -1,0 +1,53 @@
+--Selecting Data
+
+
+
+
+SELECT manufacturer, sales_in_thousands
+
+FROM car_sales;
+
+
+
+
+--Top 10 selling models of vehicles
+
+
+
+
+SELECT manufacturer, model
+
+FROM car_sales
+
+UNION
+
+SELECT TOP 10 sales_in_thousands
+
+FROM car_sales
+
+ORDER BY model;
+
+
+
+
+--Temp table//CTE
+
+
+
+
+WITH ford_model_sales(manufacturer, model, sales_in_thousands) AS (
+
+SELECT  manufacturer,
+
+FROM car_sales,
+
+WHERE (manufacturer) = 'Ford'
+
+)
+
+SELECT SUM(sales_in_thousands),
+
+FROM car_ sales
+
+GROUP BY model;
+
