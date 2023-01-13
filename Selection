@@ -1,0 +1,21 @@
+SELECT DISTINCT  customer_id, customer_name, package_id 
+
+FROM customers
+
+
+
+
+SELECT store_id, store_sales
+
+FROM sales
+
+WHERE store_sales > 1000;
+
+
+
+
+SELECT DISTINCT store_id, store_area, store_sales 
+
+FROM sales
+
+WHERE store_sales BETWEEN 1000 AND 5000;
