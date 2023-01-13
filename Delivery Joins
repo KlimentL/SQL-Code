@@ -1,0 +1,56 @@
+--INNER JOIN
+
+SELECT order_id
+
+FROM sales
+
+INNER JOIN delivery
+
+ON sales.package_id = delivery.package_id;
+
+
+
+
+--LEFT JOIN
+
+SELECT sales.customer_name, delivery.track_num
+
+FROM sales
+
+LEFT JOIN delivery
+
+ON sales.customer_name = delivery.track_num
+
+ORDER BY sales.customer_name;
+
+
+
+
+--RIGHT JOIN
+
+SELECT delivery.track_num, sales.customer_id, sales.customer_name
+
+FROM delivery
+
+RIGHT JOIN sales 
+
+ON delivery.track_num = sales.customer_id
+
+ORDER BY delivery.track_num;
+
+
+
+
+--HAVING
+
+SELECT sales.customer_name, SUM(delivery.package_price) AS TotalSpent
+
+FROM delivery
+
+INNER JOIN sales
+
+ON deliver.package_id = sales.package_id
+
+GROUP BY customer_name 
+
+HAVING SUM(delivery.package_price) > 200;
